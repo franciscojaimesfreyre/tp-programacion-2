@@ -25,9 +25,6 @@ public:
     Cliente(): numeroCliente(0), nombreCliente(""){};
 
 
-    friend ostream& operator<<(ostream& os, Cliente p);
-    friend istream& operator>>(istream& is, Cliente& p);
-
 
     int getNumeroCliente() const {
         return numeroCliente;
@@ -46,7 +43,8 @@ public:
     }
 
 
-
+    friend ostream& operator<<(ostream& os, Cliente p);
+    friend istream& operator>>(istream& is, Cliente& p);
 
 
 
@@ -56,11 +54,11 @@ public:
 };
 
 
-ostream& operator<<(ostream& os, Cliente cliente){
+inline ostream& operator<<(ostream& os, Cliente cliente){
     return os<<"("<<cliente.getNumeroCliente()<<": "<<cliente.getNombreCliente()<<")";
 }
 
-istream& operator>>(istream& is, Cliente& cliente){
+inline istream& operator>>(istream& is, Cliente& cliente){
     return is>>cliente.numeroCliente>>cliente.nombreCliente;
 }
 

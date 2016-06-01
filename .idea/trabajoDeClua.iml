@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Cliente.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Cliente.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Servicio.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Servicio.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

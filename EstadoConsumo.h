@@ -42,7 +42,7 @@ public:
 };
 
 //NO ERA NECESARIO
-
+/*
 ostream& operator<<(ostream& os, EstadoConsumo e){
     return os<<"("<<e.getNumeroCliente()<<": "<<e.getConsumo()<<",)";
 }
@@ -50,7 +50,7 @@ ostream& operator<<(ostream& os, EstadoConsumo e){
 istream& operator>>(istream& is, persona& e) {
     return is >> e.numeroCliente >> e.consumo;
 }
-
+*/
 
 
 #endif //TRABAJODECLUA_ESTADOCONSUMO_H
