@@ -10,10 +10,10 @@ using namespace std;
 
 
 class EstadoConsumo {
-
 private:
     string numeroCliente;
-    string consumo;
+    double consumo;
+
 
 public:
 

@@ -12,7 +12,7 @@ using namespace std;
 class Cliente {
 
 public:
-    Cliente(int numeroCliente, int nombreCliente) : numeroCliente(numeroCliente), nombreCliente(nombreCliente) { }
+    Cliente(int numeroCliente, string nombreCliente) : numeroCliente(numeroCliente), nombreCliente(nombreCliente) { }
 
     int getNumeroCliente() const {
         return numeroCliente;
@@ -22,17 +22,17 @@ public:
         Cliente::numeroCliente = numeroCliente;
     }
 
-    int getNombreCliente() const {
+    string getNombreCliente() const {
         return nombreCliente;
     }
 
-    void setNombreCliente(int nombreCliente) {
+    void setNombreCliente(string nombreCliente) {
         Cliente::nombreCliente = nombreCliente;
     }
 
 private:
     int numeroCliente;
-    int nombreCliente;
+    string nombreCliente;
 
 
 
