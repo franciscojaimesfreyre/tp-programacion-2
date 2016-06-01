@@ -6,13 +6,28 @@
 #define TRABAJODECLUA_CLIENTE_H
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 using namespace std;
 
 
 class Cliente {
 
+private:
+    int numeroCliente;
+    string nombreCliente;
+
+
 public:
-    Cliente(int numeroCliente, string nombreCliente) : numeroCliente(numeroCliente), nombreCliente(nombreCliente) { }
+    Cliente(int numeroCliente, string nombreCliente) :  numeroCliente(numeroCliente),  nombreCliente(nombreCliente) { }
+
+
+    Cliente(): numeroCliente(0), nombreCliente(""){};
+
+
+    friend ostream& operator<<(ostream& os, Cliente p);
+    friend istream& operator>>(istream& is, Cliente& p);
+
 
     int getNumeroCliente() const {
         return numeroCliente;
@@ -30,14 +45,18 @@ public:
         Cliente::nombreCliente = nombreCliente;
     }
 
-private:
-    int numeroCliente;
-    string nombreCliente;
+
+
+
+
 
 
 
 
 };
+
+
+
 
 
 #endif //TRABAJODECLUA_CLIENTE_H
