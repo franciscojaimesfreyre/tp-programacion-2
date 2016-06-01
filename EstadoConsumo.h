@@ -12,11 +12,29 @@ using namespace std;
 class EstadoConsumo {
 private:
 
-    string numeroCliente;
+    int numeroCliente;
     double consumo;
 
 
 public:
+
+    EstadoConsumo(int numeroCliente, double consumo) : numeroCliente(numeroCliente), consumo(consumo) { }
+
+    int getNumeroCliente() const {
+        return numeroCliente;
+    }
+
+    void setNumeroCliente(int numeroCliente) {
+        EstadoConsumo::numeroCliente = numeroCliente;
+    }
+
+    string getConsumo() const {
+        return consumo;
+    }
+
+    void setConsumo(string nombreCliente) {
+        EstadoConsumo::consumo = consumo;
+    }
 
 
 };
