@@ -11,6 +11,7 @@ using namespace std;
 
 class EstadoConsumo {
 private:
+
     string numeroCliente;
     double consumo;
 
