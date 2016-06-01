@@ -14,11 +14,12 @@ using namespace std;
 class EstadoConsumo {
 private:
 
-    int numeroCliente;
     double consumo;
+    int numeroCliente;
 
 
 public:
+
 
     EstadoConsumo(int numeroCliente, double consumo) : numeroCliente(numeroCliente), consumo(consumo) { }
 
@@ -38,19 +39,20 @@ public:
         EstadoConsumo::consumo = consumo;
     }
 
+    friend ostream& operator<<(ostream& os, EstadoConsumo e);
+    friend istream& operator>>(istream& is, EstadoConsumo& e);
+
 
 };
 
-//NO ERA NECESARIO
-/*
-ostream& operator<<(ostream& os, EstadoConsumo e){
+
+inline ostream& operator<<(ostream& os, EstadoConsumo e){
     return os<<"("<<e.getNumeroCliente()<<": "<<e.getConsumo()<<",)";
 }
 
-istream& operator>>(istream& is, persona& e) {
+inline istream& operator>>(istream& is, EstadoConsumo& e) {
     return is >> e.numeroCliente >> e.consumo;
 }
-*/
 
 
 #endif //TRABAJODECLUA_ESTADOCONSUMO_H
