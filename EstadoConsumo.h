@@ -6,6 +6,8 @@
 #define TRABAJODECLUA_ESTADOCONSUMO_H
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 using namespace std;
 
 
@@ -28,7 +30,7 @@ public:
         EstadoConsumo::numeroCliente = numeroCliente;
     }
 
-    string getConsumo() const {
+    double getConsumo() const {
         return consumo;
     }
 
@@ -38,6 +40,17 @@ public:
 
 
 };
+
+//NO ERA NECESARIO
+
+ostream& operator<<(ostream& os, EstadoConsumo e){
+    return os<<"("<<e.getNumeroCliente()<<": "<<e.getConsumo()<<",)";
+}
+
+istream& operator>>(istream& is, persona& e) {
+    return is >> e.numeroCliente >> e.consumo;
+}
+
 
 
 #endif //TRABAJODECLUA_ESTADOCONSUMO_H
