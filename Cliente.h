@@ -56,6 +56,16 @@ public:
 };
 
 
+ostream& operator<<(ostream& os, Cliente cliente){
+    return os<<"("<<cliente.getNumeroCliente()<<": "<<cliente.getNombreCliente()<<")";
+}
+
+istream& operator>>(istream& is, Cliente& cliente){
+    return is>>cliente.numeroCliente>>cliente.nombreCliente;
+}
+
+
+
 
 
 
