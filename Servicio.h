@@ -46,10 +46,10 @@ public:
         while(getline(entra,s) && estActual<5){
             istringstream iss(s);
             iss>>temp;
-            cout<<temp.getNumeroCliente();
             if (temp.getNumeroCliente()==numeroCliente)
             {
                 consumosCliente[estActual++] = temp;
+
             }
 
 
@@ -62,11 +62,18 @@ public:
 
         }
 
+
         while (estActual<5)
         {
             consumosCliente[estActual++] = EstadoConsumo(numeroCliente,-1);
         }
 
+
+
+        for (int i = 0; i<5; i++)
+        {
+            cout<<consumosCliente[i];
+        }
 
         return consumosCliente;
     }

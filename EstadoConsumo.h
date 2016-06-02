@@ -22,7 +22,7 @@ public:
 
 
     EstadoConsumo(int numeroCliente, int consumo) : numeroCliente(numeroCliente), consumo(consumo) { }
-    EstadoConsumo() : numeroCliente(2), consumo(2){};
+    EstadoConsumo() : numeroCliente(0), consumo(0){};
     int getNumeroCliente() const {
         return numeroCliente;
     }
