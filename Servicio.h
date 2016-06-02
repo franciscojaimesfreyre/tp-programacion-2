@@ -97,6 +97,17 @@ public:
         }
     }
 
+    int *consumoPorMes(EstadoConsumo consumosCliente[5])
+    {
+        int consumo[0] = consumosCliente[0].getConsumo();
+        int consumo[1] = consumosCliente[1].getConsumo()-consumo[0];
+        int consumo[2] = consumosCliente[2].getConsumo()-consumo[0]-consumo[1];
+        int consumo[3] = consumosCliente[3].getConsumo()-consumo[0]-consumo[1]-consumo[2];
+        int consumo[4] = consumosCliente[4].getConsumo()-consumo[0]-consumo[1]-consumo[2]-consumo[3];
+
+        return consumo;
+    }
+
 
     int insertarConsumo(EstadoConsumo consumo)
     {
