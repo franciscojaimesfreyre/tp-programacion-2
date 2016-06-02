@@ -37,6 +37,7 @@ public:
         return cantidadActual-1;
     }
 
+
     void consumoPorMes(int numeroCliente, int* consumos)
     {
 
