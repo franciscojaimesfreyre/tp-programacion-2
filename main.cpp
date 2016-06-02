@@ -9,13 +9,17 @@ int main() {
     string s;
     int n;
     ifstream entra("clientes.txt");
+    EstadoConsumo* consumosCliente;
     while(getline(entra,s)){
         istringstream iss(s);
         iss>>cliente;
         int ultimo = servicio.insertarCliente(cliente);
 
         cout<<"Cliente: "<<servicio.getListaClientes()[ultimo]<<endl;
-        servicio.consumosCliente(servicio.getListaClientes()[ultimo].getNumeroCliente());
+
+        consumosCliente = servicio.consumosCliente(servicio.getListaClientes()[ultimo].getNumeroCliente());
+
+
 
     }
 
