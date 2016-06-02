@@ -67,6 +67,14 @@ public:
             cout<<consumosCliente[i]<<endl;
         }
 
+        ordenarPorConsumo(consumosCliente);
+
+        return consumosCliente;
+    }
+
+    void ordenarPorConsumo(EstadoConsumo consumosCliente[5])
+    {
+        EstadoConsumo temp;
         cout<<"ordenado"<<endl;
 
         for(int i=0 ; i<4 ; i++)
@@ -87,9 +95,8 @@ public:
         {
             cout<<consumosCliente[i]<<endl;
         }
-
-        return consumosCliente;
     }
+
 
     int insertarConsumo(EstadoConsumo consumo)
     {
