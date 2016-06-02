@@ -49,7 +49,7 @@ public:
             if (temp.getNumeroCliente()==numeroCliente)
             {
                 consumosCliente[estActual++] = temp;
-
+                insertarConsumo(temp);
             }
 
 
@@ -67,13 +67,7 @@ public:
         {
             consumosCliente[estActual++] = EstadoConsumo(numeroCliente,-1);
         }
-
-
-
-        for (int i = 0; i<5; i++)
-        {
-            cout<<consumosCliente[i];
-        }
+        cout<<consumosCliente[0];
 
         return consumosCliente;
     }
