@@ -16,10 +16,11 @@ private:
 public:
     Servicio() { }
 
+    /*
     const EstadoConsumo *getListaConsumos() const {
         return listaConsumos;
     }
-
+*/
     const Cliente *getListaClientes() const {
         return listaClientes;
     }
@@ -36,7 +37,6 @@ public:
         return cantidadActual-1;
     }
 
-    EstadoConsumo temp[5];
     void consumoPorMes(int numeroCliente, int* consumos)
     {
 
@@ -53,7 +53,7 @@ public:
         }
         for (int i=1;i<4;i++)
         {
-            if (listaConsumos[1].getConsumo()>=0)
+            if (listaConsumos[i].getConsumo()>=0)
             {
 
                 consumos[i] = listaConsumos[i+1].getConsumo();
@@ -102,6 +102,8 @@ public:
             insertarConsumo(blanco);
         }
     }
+
+    /*
     EstadoConsumo *consumosCliente(int numeroCliente) {
         EstadoConsumo consumosCliente[5];
         int estActual = 0;
@@ -117,11 +119,11 @@ public:
                 consumosCliente[estActual++] = temp;
                 insertarConsumo(temp);
             }
-            /*
+
             int ultimo = servicio.insertarCliente(cliente);
 
             cout<<"Cliente: "<<servicio.getListaClientes()[ultimo]<<endl;
-             */
+
         }
 
         while (estActual<5)
@@ -138,7 +140,7 @@ public:
 
         return consumosCliente;
     }
-
+*/
     void ordenarPorConsumo(EstadoConsumo consumosCliente[5])
     {
         EstadoConsumo temp;
