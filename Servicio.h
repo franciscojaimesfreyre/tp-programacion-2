@@ -36,6 +36,72 @@ public:
         return cantidadActual-1;
     }
 
+    EstadoConsumo temp[5];
+    void consumoPorMes(int numeroCliente, int* consumos)
+    {
+
+        procesarConsumos(numeroCliente);
+        ordenarPorConsumo(listaConsumos);
+
+        if (listaConsumos[0].getConsumo()>=0)
+        {
+            consumos[0] = listaConsumos[1].getConsumo() - listaConsumos[0].getConsumo();
+        }
+        else
+        {
+            consumos[0] = 0;
+        }
+        for (int i=1;i<4;i++)
+        {
+            if (listaConsumos[1].getConsumo()>=0)
+            {
+
+                consumos[i] = listaConsumos[i+1].getConsumo();
+                for(int j = 0; j<i; j++)
+                {
+                    consumos[i] -= consumos[j];
+                }
+            }
+            else
+            {
+                consumos[i]=0;
+            }
+
+        }
+
+
+
+    }
+
+
+
+    void procesarConsumos(int numeroCliente)
+    {
+        EstadoConsumo temp;
+        string s;
+        cantidadConsumos=0;
+        ifstream entra("consumos.txt");
+        while(getline(entra,s)){
+            istringstream iss(s);
+            iss>>temp;
+            if (temp.getNumeroCliente()==numeroCliente)
+            {
+
+                insertarConsumo(temp);
+            }
+            /*
+            int ultimo = servicio.insertarCliente(cliente);
+
+            cout<<"Cliente: "<<servicio.getListaClientes()[ultimo]<<endl;
+             */
+        }
+
+        while (cantidadConsumos<5)
+        {
+            EstadoConsumo blanco = EstadoConsumo(numeroCliente, -1);
+            insertarConsumo(blanco);
+        }
+    }
     EstadoConsumo *consumosCliente(int numeroCliente) {
         EstadoConsumo consumosCliente[5];
         int estActual = 0;
@@ -49,6 +115,7 @@ public:
             if (temp.getNumeroCliente()==numeroCliente)
             {
                 consumosCliente[estActual++] = temp;
+                insertarConsumo(temp);
             }
             /*
             int ultimo = servicio.insertarCliente(cliente);
@@ -75,7 +142,6 @@ public:
     void ordenarPorConsumo(EstadoConsumo consumosCliente[5])
     {
         EstadoConsumo temp;
-        cout<<"ordenado"<<endl;
 
         for(int i=0 ; i<4 ; i++)
         {
@@ -92,28 +158,15 @@ public:
 
         }
 
-        for (int i = 0; i<5; i++)
-        {
-            cout<<consumosCliente[i]<<endl;
-        }
+
     }
 
-    int *consumoPorMes(EstadoConsumo consumosCliente[5])
-    {
-        int consumo[5];
-        consumo[0] = consumosCliente[0].getConsumo();
-        consumo[1] = consumosCliente[1].getConsumo() - consumo[0];
-        consumo[2] = consumosCliente[2].getConsumo() - consumo[0] - consumo[1];
-        consumo[3] = consumosCliente[3].getConsumo() - consumo[0] - consumo[1] - consumo[2];
-        consumo[4] = consumosCliente[4].getConsumo() - consumo[0] - consumo[1] - consumo[2] - consumo[3];
 
-        return consumo;
-    }
 
 
     int insertarConsumo(EstadoConsumo consumo)
     {
-        if (cantidadConsumos==100)
+        if (cantidadConsumos==5)
             return -1;
 
         listaConsumos[cantidadConsumos] = consumo;

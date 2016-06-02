@@ -10,14 +10,27 @@ int main() {
     int n;
     ifstream entra("clientes.txt");
     EstadoConsumo* consumosCliente;
+
+
     while(getline(entra,s)){
         istringstream iss(s);
         iss>>cliente;
         int ultimo = servicio.insertarCliente(cliente);
 
-        cout<<"Cliente: "<<servicio.getListaClientes()[ultimo]<<endl;
+        cout<<"----------------"<<endl<<"Cliente: "<<servicio.getListaClientes()[ultimo]<<endl;
+        //consumosCliente = servicio.consumosCliente(servicio.getListaClientes()[ultimo].getNumeroCliente());
+        int consumosPorMes[4];
+        servicio.consumoPorMes(servicio.getListaClientes()[ultimo].getNumeroCliente(), consumosPorMes);
 
-        consumosCliente = servicio.consumosCliente(servicio.getListaClientes()[ultimo].getNumeroCliente());
+        for (int i=1;i<5;i++)
+
+        {
+
+
+            cout<<"Consumo mes "<<i<<":"<<consumosPorMes[i-1]<<endl;
+        }
+
+
 
 
 
