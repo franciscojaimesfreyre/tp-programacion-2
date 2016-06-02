@@ -49,30 +49,42 @@ public:
             if (temp.getNumeroCliente()==numeroCliente)
             {
                 consumosCliente[estActual++] = temp;
-
             }
-
-
             /*
             int ultimo = servicio.insertarCliente(cliente);
 
             cout<<"Cliente: "<<servicio.getListaClientes()[ultimo]<<endl;
              */
-
-
         }
-
 
         while (estActual<5)
         {
             consumosCliente[estActual++] = EstadoConsumo(numeroCliente,-1);
         }
 
+        for (int i = 0; i<5; i++)
+        {
+            cout<<consumosCliente[i]<<endl;
+        }
 
+        cout<<"ordenado"<<endl;
+
+        for(int i=0 ; i<4 ; i++)
+        {
+            for(int j = 0 ; j<4 ; j++)
+            {
+                if (consumosCliente[j].getConsumo() > consumosCliente[j+1].getConsumo())
+                {
+                    temp = consumosCliente[j];
+                    consumosCliente[j] = consumosCliente[j+1];
+                    consumosCliente[j+1] = temp;
+                }
+            }
+        }
 
         for (int i = 0; i<5; i++)
         {
-            cout<<consumosCliente[i];
+            cout<<consumosCliente[i]<<endl;
         }
 
         return consumosCliente;
