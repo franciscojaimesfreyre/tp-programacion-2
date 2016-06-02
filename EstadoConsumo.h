@@ -47,7 +47,7 @@ public:
 
 
 inline ostream& operator<<(ostream& os, EstadoConsumo e){
-    return os<<"("<<e.getNumeroCliente()<<": "<<e.getConsumo()<<",)";
+    return os<<"("<<e.getNumeroCliente()<<": "<<e.getConsumo()<<")";
 }
 
 inline istream& operator>>(istream& is, EstadoConsumo& e) {
