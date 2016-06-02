@@ -14,15 +14,15 @@ using namespace std;
 class EstadoConsumo {
 private:
 
-    double consumo;
+    int consumo;
     int numeroCliente;
 
 
 public:
 
 
-    EstadoConsumo(int numeroCliente, double consumo) : numeroCliente(numeroCliente), consumo(consumo) { }
-
+    EstadoConsumo(int numeroCliente, int consumo) : numeroCliente(numeroCliente), consumo(consumo) { }
+    EstadoConsumo() : numeroCliente(2), consumo(2){};
     int getNumeroCliente() const {
         return numeroCliente;
     }
@@ -31,11 +31,11 @@ public:
         EstadoConsumo::numeroCliente = numeroCliente;
     }
 
-    double getConsumo() const {
+    int getConsumo() const {
         return consumo;
     }
 
-    void setConsumo(string nombreCliente) {
+    void setConsumo(int consumo) {
         EstadoConsumo::consumo = consumo;
     }
 
@@ -51,7 +51,7 @@ inline ostream& operator<<(ostream& os, EstadoConsumo e){
 }
 
 inline istream& operator>>(istream& is, EstadoConsumo& e) {
-    return is >> e.numeroCliente >> e.consumo;
+    return is>>e.numeroCliente>>e.consumo;
 }
 
 
