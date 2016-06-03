@@ -54,7 +54,7 @@ public:
         }
         for (int i=1;i<4;i++)
         {
-            if (listaConsumos[i].getConsumo()>=0)
+            if (listaConsumos[i+1].getConsumo()>=0)
             {
 
                 consumos[i] = listaConsumos[i+1].getConsumo();
